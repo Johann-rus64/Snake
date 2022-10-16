@@ -4,18 +4,26 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Point p1 = new Point(1, 3, '*');
+        Console.SetWindowSize(80, 25);
+        Console.SetBufferSize(80, 25);
+
+        //Отрисовка рамочки
+        GorizontalLine upLine = new GorizontalLine(0, 78, 0, '+');
+        GorizontalLine downLine = new GorizontalLine(0, 78, 24, '+');
+        VerticalLine leftLine = new VerticalLine(0, 24, 0, '+');
+        VerticalLine rightLine = new VerticalLine(0, 24, 78, '+');
+        upLine.Drow();
+        downLine.Drow();
+        leftLine.Drow();
+        rightLine.Drow();
+        
+        //Отрисовка точек
+      
+        Point p = new Point(4, 5, '#');
        
-        p1.Draw();
+        p.Draw();
 
-        Point p2 = new Point(4, 5, '#');
-       
-        p2.Draw();
-
-        GorizontalLine line = new GorizontalLine(5, 10, 8, '+');
-        line.Drow();
-
-
+      
         Console.ReadLine();
     }
 }

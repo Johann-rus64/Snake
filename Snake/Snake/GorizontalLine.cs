@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    internal class GorizontalLine
+    internal class GorizontalLine: Figure
     {
-        List<Point> pList;
+       
         public GorizontalLine(int xLeft, int xReight, int y, char sym)
         {
             pList = new List<Point>();
@@ -19,12 +19,6 @@ namespace Snake
             }
         }
 
-        public void Drow()
-        {
-            foreach (Point p in pList)
-            {
-                p.Draw();
-            }
-        }
+      
     }
 }
