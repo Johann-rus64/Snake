@@ -23,5 +23,6 @@ internal class Program
 
         Snakee snake = new Snakee(p, 4, Direction.RIGHT);
         snake.Drow();
+        snake.Move();
     }
 }
