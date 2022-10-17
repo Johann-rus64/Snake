@@ -10,7 +10,7 @@ namespace Snake
     {
         Direction direction;
 
-        public Snakee(Point tail, int lenght, Direction direction)
+        public Snakee(Point tail, int lenght, Direction _direction)
         {
             direction = _direction;
 
@@ -27,7 +27,7 @@ namespace Snake
         internal void Move()
         {
             Point tail = pList.First();
-            Plist.Remove(tail);
+            pList.Remove(tail);
             Point head = GetNextPoint();
             pList.Add(head);
 
