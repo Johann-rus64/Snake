@@ -19,11 +19,9 @@ internal class Program
         
         //Отрисовка точек
       
-        Point p = new Point(4, 5, '#');
-       
-        p.Draw();
+        Point p = new Point(4, 5, '*');
 
-      
-        Console.ReadLine();
+        Snakee snake = new Snakee(p, 4, Direction.RIGHT);
+        snake.Drow();
     }
 }
