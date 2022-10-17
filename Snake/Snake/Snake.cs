@@ -9,7 +9,7 @@ namespace Snake
 {
     internal class Snakee : Figure
     {
-         Direction direction;
+        Direction direction;
 
         public Snakee(Point tail, int lenght, Direction _direction)
         {
@@ -44,6 +44,18 @@ namespace Snake
             return nextPoint;
         }
 
+
+        public bool IsHitTail()
+        {
+            var head = pList.Last();
+            for (int i = 0; i < pList.Count - 2; i++)
+            {
+                if (head.IsHit(pList[i]))
+                    return true;
+            }
+            return false;
+        }
+
         public void HandleKey(ConsoleKey key)
         {
             if (key == ConsoleKey.LeftArrow)
@@ -56,7 +68,21 @@ namespace Snake
                 direction = Direction.UP;
         }
 
-    } 
-        
+        public bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(food))
+            {
+                food.sym = head.sym;
+                pList.Add(food);
+                return true;
+            }
+            else
+                return false;
+
+        }
+
+
+    }
         
 }
